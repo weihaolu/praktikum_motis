@@ -5,8 +5,8 @@ import { PatternLines } from '@visx/pattern';
 import { DataContext } from '@visx/xychart';
 const patternId = 'xy-chart-pattern';
 const accessors = {
-    xAccessor: (d: any) => d[0],
-    yAccessor: (d: any) => d[1],
+    xAccessor: (d: any) => d.x,
+    yAccessor: (d: any) => d.y,
 };
 const barSeriesKey = 'capacityIncrease';
 const animationTrajectory = 'center';
@@ -40,7 +40,7 @@ function CustomChartBackground() {
 }
 
 interface CapacityChartProps {
-    data: any[],
+    data: { x: string, y: number }[],
     width: number,
     height: number,
 }

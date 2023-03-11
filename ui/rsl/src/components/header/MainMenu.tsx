@@ -61,6 +61,7 @@ function MainMenu(): JSX.Element {
 
   return (
     <nav className="flex space-x-2">
+      <MainPageLink to="praktikum">Praktikum</MainPageLink>
       <MainPageLink to="trips">Züge</MainPageLink>
       <MainPageLink to="groups">Reisende</MainPageLink>
       <MainPageLink to="stats">Statistiken</MainPageLink>

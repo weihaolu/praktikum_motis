@@ -4,7 +4,7 @@ import { MeasureUnion, toMeasureWrapper } from "@/data/measures";
 import { sendPaxMonForkUniverseRequest, sendPaxMonGroupStatisticsRequest, sendPaxMonDestroyUniverseRequest } from "@/api/paxmon";
 import { PaxMonEdgeLoadInfo, PaxMonGroupStatisticsResponse, PaxMonHistogram, PaxMonTripInfo, PaxMonUpdatedTrip } from "@/api/protocol/motis/paxmon";
 import { sendRequest } from "@/api/request";
-import { Roundtrip } from "./types";
+import { AggregatedDelays, BeforeAfterCancel, BeforeAfterDist, NumberObject, OverallDelayDiff, Roundtrip } from "./types";
 import { MeasureWrapper } from "@/api/protocol/motis/paxforecast";
 const time = new Date("Tue Sep 24 2019 02:00:00 GMT+0100");
 
@@ -46,7 +46,7 @@ async function getCancelMeasures(roundTrip: Roundtrip) {
   return { cancelStart: toMeasureWrapper(cancelStartMeasure), cancelReturn: toMeasureWrapper(cancelReturnMeasure) };
 }
 
-async function applyMeasures(measures: MeasureWrapper[], costHeuristic: Function) {
+async function applyMeasures(measures: MeasureWrapper[], costHeuristic: Function): Promise<BeforeAfterCancel> {
   const tempUniverse = await sendPaxMonForkUniverseRequest({
     universe: 0,
     fork_schedule: true,
@@ -74,25 +74,25 @@ async function applyMeasures(measures: MeasureWrapper[], costHeuristic: Function
 
   const groupStatisticsAfterMeasure = await sendPaxMonGroupStatisticsRequest(groupStatisticsContent);
 
-  const group_routes_broken = measuresResult.stats.group_routes_broken;
   const updatedTrips = measuresResult.updates.updated_trips;
-  const { transformedUpdatedTrips, overallCapacityCost, distDiffs } = getTransformedUpdatedTrips(updatedTrips);
+  const { transformedUpdatedTrips, overallCapacityCost, distDiffs, beforeAfterDist } = getTransformedUpdatedTrips(updatedTrips);
   const aggregatedDelays = getAggregatedDelays(groupStatisticsBeforeMeasure, groupStatisticsAfterMeasure);
 
-  const beforeAfter = { group_routes_broken, transformedUpdatedTrips, groupStatisticsBeforeMeasure, groupStatisticsAfterMeasure, aggregatedDelays, overallCapacityCost, overallCost: costHeuristic(overallCapacityCost, aggregatedDelays), distDiffs };
+  const beforeAfter = { transformedUpdatedTrips, aggregatedDelays, overallCost: costHeuristic(overallCapacityCost, aggregatedDelays), distDiffs, beforeAfterDist};
 
   await sendPaxMonDestroyUniverseRequest({
     universe: tempUniverse.universe
   });
 
   return beforeAfter;
-
 }
 
 function getTransformedUpdatedTrips(updatedTrips: PaxMonUpdatedTrip[]) {
   const transformedUpdatedTrips = [];
   let overallCapacityCost = 0;
-  const distDiffs: any = {}
+  const distDiffs: NumberObject = {};
+  const beforeAfterDist: BeforeAfterDist = {before:{},after:{}};
+
   for (const updatedTrip of updatedTrips) {
     const updatedDists: any = [];
     if (JSON.stringify(updatedTrip.before_edges) !== JSON.stringify(updatedTrip.after_edges)) {
@@ -103,19 +103,11 @@ function getTransformedUpdatedTrips(updatedTrips: PaxMonUpdatedTrip[]) {
         const to = before_edge.from.name;
         if (after_edge && JSON.stringify(before_edge.dist) !== JSON.stringify(after_edge.dist)) {
           const capacity = getCapacity(before_edge, after_edge);
-          const cost = beforeAfterEdgeCost(before_edge, after_edge);
-          const truncatedCost = Math.trunc(cost * 100);
-          if (truncatedCost !== 0) {
-            if (distDiffs[truncatedCost]) {
-              distDiffs[truncatedCost]++;
-            } else {
-              distDiffs[truncatedCost] = 1;
-            }
-          }
-
-          console.log()
-          updatedDists.push({ from, to, before_edge_dist: before_edge.dist, after_edge_dist: after_edge.dist, possibly_over_capacity: after_edge.possibly_over_capacity, capacity, cost });
+          const cost = beforeAfterEdgeCost(before_edge, after_edge, beforeAfterDist);
+          setDist(cost,distDiffs);
           overallCapacityCost += cost;
+
+          updatedDists.push({ from, to, before_edge_dist: before_edge.dist, after_edge_dist: after_edge.dist, possibly_over_capacity: after_edge.possibly_over_capacity, capacity, cost });
         }
         if (!after_edge) {
           updatedDists.push({ from, to, canceled: true });
@@ -124,11 +116,21 @@ function getTransformedUpdatedTrips(updatedTrips: PaxMonUpdatedTrip[]) {
     }
     transformedUpdatedTrips.push({ tripId: updatedTrip.tsi.trip, newly_critical_sections: updatedTrip.newly_critical_sections, updatedDists });
   }
-  return { transformedUpdatedTrips, overallCapacityCost, distDiffs };
+  return { transformedUpdatedTrips, overallCapacityCost, distDiffs, beforeAfterDist };
 }
 
-function getAggregatedDelays(before: PaxMonGroupStatisticsResponse, after: PaxMonGroupStatisticsResponse) {
+function setDist (dist:number, numberObject: NumberObject) {
+  const truncatedCost = Math.trunc(dist* 100);
+  if (truncatedCost !== 0) {
+    if (numberObject[truncatedCost]) {
+      numberObject[truncatedCost]++;
+    } else {
+      numberObject[truncatedCost] = 1;
+    }
+  }
+}
 
+function getAggregatedDelays(before: PaxMonGroupStatisticsResponse, after: PaxMonGroupStatisticsResponse): AggregatedDelays {
   const getAggregatedDelay = (beforeHistogram: PaxMonHistogram, afterHistogram: PaxMonHistogram) => {
     let overallDelayBefore = 0;
     let overallDelayAfter = 0;
@@ -156,13 +158,18 @@ function getAggregatedDelays(before: PaxMonGroupStatisticsResponse, after: PaxMo
 
 }
 
-function beforeAfterEdgeCost(before_edge: PaxMonEdgeLoadInfo, after_edge: PaxMonEdgeLoadInfo) {
+function beforeAfterEdgeCost(before_edge: PaxMonEdgeLoadInfo, after_edge: PaxMonEdgeLoadInfo, beforeAfterDist: BeforeAfterDist) {
   const capacity = getCapacity(before_edge, after_edge);
   const before_edge_q95 = before_edge.dist.q95;
   const after_edge_q95 = after_edge.dist.q95;
+
   if (capacity === 0) {
     return 0;//not sure if this makes sense
   }
+
+  setDist(before_edge_q95/capacity, beforeAfterDist.before)
+  setDist(after_edge_q95/capacity, beforeAfterDist.after)
+
   return (after_edge_q95 - before_edge_q95) / capacity
 }
 
@@ -184,7 +191,7 @@ const costFunction3 = (capacityCosts: any, aggregatedDelays: any) => {
 }
 
 //only possibleAssignments can be made for trips.length number of trips <=> trips.length - 5 trips must be completely canceled
-export async function getBestAssignment(trips: any, numberOfCanceledTrips: number, costHeuristic: Function, result: any[] = [], previousMeasures: any[] = []): Promise<any> {
+export async function getBestAssignment(trips: any, numberOfCanceledTrips: number, costHeuristic: Function, result: BeforeAfterCancel[] = [], previousMeasures: MeasureWrapper[] = []): Promise<BeforeAfterCancel[]> {
   if (result.length === numberOfCanceledTrips) {
     return result;
   }
@@ -211,68 +218,68 @@ export async function getBestAssignment(trips: any, numberOfCanceledTrips: numbe
   return await getBestAssignment(trips.filter((_trip: any, index: number) => index !== bestIndex), numberOfCanceledTrips, costHeuristic, result, currentMeasures);
 }
 
-export async function getMockedRoundtrips(
-  start_station_id: string,
-  time: number,
-  result: { startConnection: any, returnConnection: any }[],
-): Promise<any> {
+// export async function getMockedRoundtrips(
+//   start_station_id: string,
+//   time: number,
+//   result: { startConnection: any, returnConnection: any }[],
+// ): Promise<any> {
 
-  const startStationContent = {
-    station_id: start_station_id,
-    time,
-    "event_count": 100,
-    "direction": "LATER",
-    "by_schedule_time": true
-  };
+//   const startStationContent = {
+//     station_id: start_station_id,
+//     time,
+//     "event_count": 100,
+//     "direction": "LATER",
+//     "by_schedule_time": true
+//   };
 
-  const startStationResult = await sendRequest("/railviz/get_station", "RailVizStationRequest", startStationContent);
-  const startStationEvents = (startStationResult.content as any).events;
-  for (const startStationEvent of startStationEvents) {
-    if (startStationEvent.type === "DEP") {
-      const connectionContentOfStartStationEvent = startStationEvent.trips[0].id
-      if (!Number.isInteger(Number.parseInt(connectionContentOfStartStationEvent.line_id, 10))) {
-        continue;
-      }
-      const connectionResultOfStartStationEvent = await sendRequest("/trip_to_connection", "TripId", connectionContentOfStartStationEvent);
-      const stopsOfStartStationConnection = (connectionResultOfStartStationEvent.content as any).stops;
-      const firstStopOfStartStationConnection = stopsOfStartStationConnection[0];
-      //the first station of this trip must be the start station
-      if (firstStopOfStartStationConnection.station.id === start_station_id) {
-        const startConnection = connectionResultOfStartStationEvent.content;
-        const lastStopOfStartStationConnection = stopsOfStartStationConnection[stopsOfStartStationConnection.length - 1];
-        const returnStationId = lastStopOfStartStationConnection.station.id;
-        const returnStationContent = {
-          station_id: returnStationId,
-          time,
-          "event_count": 100,
-          "direction": "LATER",
-          "by_schedule_time": true
-        };
-        let returnConnection;
-        const endStationResult = await sendRequest("/railviz/get_station", "RailVizStationRequest", returnStationContent);
-        const endStationEvents = (endStationResult.content as any).events;
-        for (const endStationEvent of endStationEvents) {
-          if (endStationEvent.type === "DEP") {
-            const connectionContentOfEndStationEvent = endStationEvent.trips[0].id
-            const connectionResultOfEndStationEvent = await sendRequest("/trip_to_connection", "TripId", connectionContentOfEndStationEvent);
-            const stopsOfEndStationConnection = (connectionResultOfEndStationEvent.content as any).stops;
-            const firstStopOfEndStationConnection = stopsOfEndStationConnection[0];
-            const lastStopOfEndStationConnection = stopsOfEndStationConnection[stopsOfEndStationConnection.length - 1];
-            //the first station of this trip must be the return station
-            if (firstStopOfEndStationConnection.station.id === returnStationId && lastStopOfEndStationConnection.station.id === start_station_id) {
-              returnConnection = connectionResultOfEndStationEvent.content;
-              break;
-            }
-          }
-        }
-        if (returnConnection) {
-          result.push({ startConnection, returnConnection });
-        }
-      }
-    }
-  }
-  console.log(result);
-}
+//   const startStationResult = await sendRequest("/railviz/get_station", "RailVizStationRequest", startStationContent);
+//   const startStationEvents = (startStationResult.content as any).events;
+//   for (const startStationEvent of startStationEvents) {
+//     if (startStationEvent.type === "DEP") {
+//       const connectionContentOfStartStationEvent = startStationEvent.trips[0].id
+//       if (!Number.isInteger(Number.parseInt(connectionContentOfStartStationEvent.line_id, 10))) {
+//         continue;
+//       }
+//       const connectionResultOfStartStationEvent = await sendRequest("/trip_to_connection", "TripId", connectionContentOfStartStationEvent);
+//       const stopsOfStartStationConnection = (connectionResultOfStartStationEvent.content as any).stops;
+//       const firstStopOfStartStationConnection = stopsOfStartStationConnection[0];
+//       //the first station of this trip must be the start station
+//       if (firstStopOfStartStationConnection.station.id === start_station_id) {
+//         const startConnection = connectionResultOfStartStationEvent.content;
+//         const lastStopOfStartStationConnection = stopsOfStartStationConnection[stopsOfStartStationConnection.length - 1];
+//         const returnStationId = lastStopOfStartStationConnection.station.id;
+//         const returnStationContent = {
+//           station_id: returnStationId,
+//           time,
+//           "event_count": 100,
+//           "direction": "LATER",
+//           "by_schedule_time": true
+//         };
+//         let returnConnection;
+//         const endStationResult = await sendRequest("/railviz/get_station", "RailVizStationRequest", returnStationContent);
+//         const endStationEvents = (endStationResult.content as any).events;
+//         for (const endStationEvent of endStationEvents) {
+//           if (endStationEvent.type === "DEP") {
+//             const connectionContentOfEndStationEvent = endStationEvent.trips[0].id
+//             const connectionResultOfEndStationEvent = await sendRequest("/trip_to_connection", "TripId", connectionContentOfEndStationEvent);
+//             const stopsOfEndStationConnection = (connectionResultOfEndStationEvent.content as any).stops;
+//             const firstStopOfEndStationConnection = stopsOfEndStationConnection[0];
+//             const lastStopOfEndStationConnection = stopsOfEndStationConnection[stopsOfEndStationConnection.length - 1];
+//             //the first station of this trip must be the return station
+//             if (firstStopOfEndStationConnection.station.id === returnStationId && lastStopOfEndStationConnection.station.id === start_station_id) {
+//               returnConnection = connectionResultOfEndStationEvent.content;
+//               break;
+//             }
+//           }
+//         }
+//         if (returnConnection) {
+//           result.push({ startConnection, returnConnection });
+//         }
+//       }
+//     }
+//   }
+//   console.log(result);
+// }
   // getMockedRoundtrips("8000261", Math.round(time.getTime() / 1000), result).then(async () => {
   //   console.log(result);
   //   const testRoundtrips = result.slice(0, 5);
