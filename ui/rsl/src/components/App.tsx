@@ -20,6 +20,8 @@ import SimPanel from "@/components/sim/SimPanel";
 import GroupStatistics from "@/components/stats/GroupStatistics";
 import { TripDetailsFromRoute } from "@/components/trips/TripDetails";
 import TripsMainSection from "@/components/trips/TripsMainSection";
+import Praktikum from "@/components/praktikum/PraktikumMain";
+import CancelRoundtripDetails from "./praktikum/CancelRoundtripsDetails";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -76,6 +78,10 @@ const router = createHashRouter([
         children: [{ path: ":groupId", element: <GroupDetailsFromRoute /> }],
       },
       { path: "stats", element: <GroupStatistics /> },
+      {
+        path: "praktikum", element: <Praktikum />,
+        children: [{ path: ":cancelRoundTripsInfo", element: <CancelRoundtripDetails /> }],
+      }
     ],
   },
 ]);
