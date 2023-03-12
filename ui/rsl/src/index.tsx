@@ -9,9 +9,9 @@ const container = document.getElementById("root");
 if (container) {
   const root = createRoot(container);
   root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
       <App />
-    </React.StrictMode>
+    // </React.StrictMode>
   );
 } else {
   console.log("Root element not found!");

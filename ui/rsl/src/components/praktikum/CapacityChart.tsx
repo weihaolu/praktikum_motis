@@ -63,7 +63,7 @@ export const CpacityChart: React.FC<CapacityChartProps> = ({ data, width, height
                 key={`time-axis-${animationTrajectory}-${false}`}
                 orientation="bottom"
                 numTicks={data.length}
-                label="Kapazitätserhöhung in %"
+                label="Auslastungserhöhung in %"
             />
             <Axis
                 key={`temp-axis-${animationTrajectory}-${false}`}
@@ -81,7 +81,7 @@ export const CpacityChart: React.FC<CapacityChartProps> = ({ data, width, height
                     const datum = tooltipData?.datumByKey[barSeriesKey]?.datum;
                     return (
                         <>
-                            {accessors.yAccessor(datum)} Kapazitätserhöhungen von {accessors.xAccessor(datum)}%
+                            {accessors.yAccessor(datum)} Auslastungserhöhung von {accessors.xAccessor(datum)}%
                         </>
                     )
                 }}

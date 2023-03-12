@@ -1,9 +1,7 @@
 import React, { ReactNode, useState } from 'react';
-
-import { TestTheshold } from "./TestThreshold";
 import { ThresholdChart } from "./ThresholdChart";
 import { CpacityChart } from "./CapacityChart";
-import { CancelRoundtripResult, NumberObject } from "./types";
+import { CancelRoundtripResult, NumberObject, ThresholdDataObject } from "./types";
 
 
 interface BeforeAfterViewProps {
@@ -11,20 +9,11 @@ interface BeforeAfterViewProps {
 }
 
 export const BeforeAfterView: React.FC<BeforeAfterViewProps> = ({ canceldRoundTrips }) => {
-    const aggregate = (numberObject: NumberObject, aggregatedResult: NumberObject) => {
-        Object.keys(numberObject).forEach(key => {
-            if (aggregatedResult[key]) {
-                aggregatedResult[key] += numberObject[key];
-            } else {
-                aggregatedResult[key] = numberObject[key];
-            }
-        });
-    }
-    const transFormNumberObjectToXYArray = (numberObject: NumberObject) => Object.entries(numberObject).sort((a, b) => Number.parseInt(a[0], 10) - Number.parseInt(b[0], 10)).map(entry => ({ x: entry[0], y: entry[1] }));
-    const transFormNumberObjectsToXYYArray = (numberObject1: NumberObject, numberObject2: NumberObject) => {
-        const preResult: {
-            [key: string]: { y1: number, y2: number }
-        } = {};
+
+    const transformNumberObjectToXYArray = (numberObject: NumberObject) => Object.entries(numberObject).sort((a, b) => Number.parseInt(a[0], 10) - Number.parseInt(b[0], 10)).map(entry => ({ x: entry[0], y: entry[1] }));
+    const transformThresholdObjectToThresholdArray = (thresholdDataObject: ThresholdDataObject) => Object.entries(thresholdDataObject).sort((a, b) => Number.parseInt(a[0], 10) - Number.parseInt(b[0], 10)).map(entry => ({ x: entry[0], y1: entry[1].y1 || 0, y2: entry[1].y2 || 0 }));
+    const transformNumberObjectsToThresholdArray = (numberObject1: NumberObject, numberObject2: NumberObject) => {
+        const preResult: ThresholdDataObject = {};
 
         Object.entries(numberObject1).forEach(entry => {
             const x = entry[0];
@@ -40,30 +29,20 @@ export const BeforeAfterView: React.FC<BeforeAfterViewProps> = ({ canceldRoundTr
             preResult[x] = { y1, y2 };
         });
 
-        return Object.entries(preResult).sort((a, b) => Number.parseInt(a[0], 10) - Number.parseInt(b[0], 10)).map(entry => ({ x: entry[0], y1: entry[1].y1, y2: entry[1].y2 }));
+        return transformThresholdObjectToThresholdArray(preResult);
     };
-    const preDistDiffData: NumberObject = {};
-    const preBeforeDistData: NumberObject = {};
-    const preAfterDistData: NumberObject = {};
 
-    for (const canceledRoundTrip of canceldRoundTrips) {
-        const distDiffs = canceledRoundTrip.beforeAfter.distDiffs;
-        aggregate(distDiffs, preDistDiffData);
+    const lastCanceledTrip = canceldRoundTrips[canceldRoundTrips.length - 1];//the before after data here already considers the previous measures as they are applied on the same universe at the same time
+    const distDiffData = transformNumberObjectToXYArray(lastCanceledTrip.beforeAfter.distDiffs);
+    const beforeAfterDistData = transformNumberObjectsToThresholdArray(lastCanceledTrip.beforeAfter.beforeAfterDist.before, lastCanceledTrip.beforeAfter.beforeAfterDist.after);
+    const beforeAfterDelayData = transformThresholdObjectToThresholdArray(lastCanceledTrip.beforeAfter.delayDiff.exp.beforeAfterDelays);
 
-        const { before, after } = canceledRoundTrip.beforeAfter.beforeAfterDist;
-        aggregate(before, preBeforeDistData);
-        aggregate(after, preAfterDistData);
-    }
-
-    const distDiffData = transFormNumberObjectToXYArray(preDistDiffData);
-    const beforeAfterDistData = transFormNumberObjectsToXYYArray(preBeforeDistData, preAfterDistData);
-
-    const width = 700;
+    const width = 1000;
     const height = 700;
     const tabs: Tab[] = [
-        { label: 'Capacity BarChart', content: (<CpacityChart width={width} height={height} data={distDiffData} />) },
-        { label: 'Capacity Threshold', content: (<ThresholdChart width={width} height={height} thresholdDataArray={beforeAfterDistData} />) },
-        { label: 'Threshold1', content: (<TestTheshold width={width} height={height} />) }
+        { label: 'Auslastungserhöhungen', content: (<CpacityChart width={width} height={height} data={distDiffData} />) },
+        { label: 'Auslastungsvergleich', content: (<ThresholdChart width={width} height={height} thresholdDataArray={beforeAfterDistData} xLabel={'Auslastung in %'} yLabel={'Anzahl'} />) },
+        { label: 'Verspätungsvergleich', content: (<ThresholdChart width={width} height={height} thresholdDataArray={beforeAfterDelayData} xLabel={'Verspätung in Min'} yLabel={'Anzahl'} />) },
     ]
 
     return (
@@ -103,7 +82,7 @@ const Tabs: React.FC<TabsProp> = ({ tabs }) => {
                     </button>
                 ))}
             </div>
-            <div>{tabs[activeTabIndex].content}</div>
+            <div className="tab-content">{tabs[activeTabIndex].content}</div>
         </div>
     );
 };

@@ -6,11 +6,14 @@ export interface Roundtrip {
 }
 
 export interface OverallDelayDiff {
-    overallDelayBefore: number;
-    overallDelayAfter: number;
+    aggregatedDelays: {
+        overallDelayBefore: number;
+        overallDelayAfter: number;
+    };
+    beforeAfterDelays: ThresholdDataObject;
 }
 
-export interface AggregatedDelays {
+export interface DelayDiff {
     min: OverallDelayDiff;
     max: OverallDelayDiff;
     exp: OverallDelayDiff;
@@ -18,13 +21,15 @@ export interface AggregatedDelays {
 
 export type NumberObject = { [key: string]: number }
 
+export type ThresholdDataObject = { [x: string]: { y1: number, y2: number } }
+
 export interface BeforeAfterDist {
     before: NumberObject
     after: NumberObject
 }
 
 export interface BeforeAfterCancel {
-    aggregatedDelays: AggregatedDelays;
+    delayDiff: DelayDiff;
     overallCost: number;
     distDiffs: NumberObject;
     beforeAfterDist: BeforeAfterDist;

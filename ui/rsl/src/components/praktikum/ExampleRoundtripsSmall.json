@@ -1,0 +1,3258 @@
+[
+    {
+        "startConnection": {
+            "stops": [
+                {
+                    "station": {
+                        "id": "8000261",
+                        "name": "München Hbf",
+                        "pos": {
+                            "lat": 48.140232,
+                            "lng": 11.558335
+                        }
+                    },
+                    "arrival": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569288240,
+                        "schedule_time": 1569288240,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": true
+                },
+                {
+                    "station": {
+                        "id": "8004158",
+                        "name": "München-Pasing",
+                        "pos": {
+                            "lat": 48.149852,
+                            "lng": 11.461872
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569288660,
+                        "schedule_time": 1569288660,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569288720,
+                        "schedule_time": 1569288720,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000013",
+                        "name": "Augsburg Hbf",
+                        "pos": {
+                            "lat": 48.365441,
+                            "lng": 10.88557
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569290100,
+                        "schedule_time": 1569290100,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569290220,
+                        "schedule_time": 1569290220,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000170",
+                        "name": "Ulm Hbf",
+                        "pos": {
+                            "lat": 48.399437,
+                            "lng": 9.982227
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569292620,
+                        "schedule_time": 1569292620,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569292740,
+                        "schedule_time": 1569292740,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000096",
+                        "name": "Stuttgart Hbf",
+                        "pos": {
+                            "lat": 48.784084,
+                            "lng": 9.181635
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569296160,
+                        "schedule_time": 1569296160,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569297060,
+                        "schedule_time": 1569297060,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000244",
+                        "name": "Mannheim Hbf",
+                        "pos": {
+                            "lat": 49.479354,
+                            "lng": 8.468921
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569299280,
+                        "schedule_time": 1569299280,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569299760,
+                        "schedule_time": 1569299760,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8070003",
+                        "name": "Frankfurt(M) Flughafen Fernbf",
+                        "pos": {
+                            "lat": 50.053167,
+                            "lng": 8.570185
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569301560,
+                        "schedule_time": 1569301560,
+                        "track": "Fern 6",
+                        "schedule_track": "Fern 6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569301740,
+                        "schedule_time": 1569301740,
+                        "track": "Fern 6",
+                        "schedule_track": "Fern 6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8005556",
+                        "name": "Siegburg/Bonn",
+                        "pos": {
+                            "lat": 50.793915,
+                            "lng": 7.203026
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569303960,
+                        "schedule_time": 1569303960,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569304020,
+                        "schedule_time": 1569304020,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000207",
+                        "name": "Köln Hbf",
+                        "pos": {
+                            "lat": 50.94303,
+                            "lng": 6.958729
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569305100,
+                        "schedule_time": 1569305100,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569305460,
+                        "schedule_time": 1569305460,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000085",
+                        "name": "Düsseldorf Hbf",
+                        "pos": {
+                            "lat": 51.219962,
+                            "lng": 6.794319
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569306660,
+                        "schedule_time": 1569306660,
+                        "track": "17",
+                        "schedule_track": "17",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569306780,
+                        "schedule_time": 1569306780,
+                        "track": "17",
+                        "schedule_track": "17",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000086",
+                        "name": "Duisburg Hbf",
+                        "pos": {
+                            "lat": 51.429785,
+                            "lng": 6.775903
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569307500,
+                        "schedule_time": 1569307500,
+                        "track": "12",
+                        "schedule_track": "12",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569307620,
+                        "schedule_time": 1569307620,
+                        "track": "12",
+                        "schedule_track": "12",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000098",
+                        "name": "Essen Hbf",
+                        "pos": {
+                            "lat": 51.451355,
+                            "lng": 7.014793
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569308220,
+                        "schedule_time": 1569308220,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569308340,
+                        "schedule_time": 1569308340,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000041",
+                        "name": "Bochum Hbf",
+                        "pos": {
+                            "lat": 51.478609,
+                            "lng": 7.223275
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569308880,
+                        "schedule_time": 1569308880,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569308940,
+                        "schedule_time": 1569308940,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000080",
+                        "name": "Dortmund Hbf",
+                        "pos": {
+                            "lat": 51.517896,
+                            "lng": 7.45929
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569309660,
+                        "schedule_time": 1569309660,
+                        "track": "8",
+                        "schedule_track": "8",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": true,
+                    "enter": false
+                }
+            ],
+            "transports": [
+                {
+                    "move_type": "Transport",
+                    "move": {
+                        "range": {
+                            "from": 0,
+                            "to": 13
+                        },
+                        "category_name": "ICE",
+                        "category_id": 11,
+                        "clasz": 1,
+                        "train_nr": 616,
+                        "line_id": "42",
+                        "name": "ICE 42",
+                        "provider": "DB",
+                        "direction": ""
+                    }
+                }
+            ],
+            "trips": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 13
+                    },
+                    "id": {
+                        "station_id": "8000261",
+                        "train_nr": 616,
+                        "time": 1569288240,
+                        "target_station_id": "8000080",
+                        "target_time": 1569309660,
+                        "line_id": "42"
+                    },
+                    "debug": "fplandb_fv.txt:355711:355736"
+                }
+            ],
+            "attributes": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 13
+                    },
+                    "code": "RI",
+                    "text": "RIS überwachter Verkehr"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 13
+                    },
+                    "code": "QR",
+                    "text": "Railteam Service"
+                },
+                {
+                    "range": {
+                        "from": 4,
+                        "to": 13
+                    },
+                    "code": "BR",
+                    "text": "Bordrestaurant"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 13
+                    },
+                    "code": "CK",
+                    "text": "Komfort Check-in möglich  http://bahn.de/komfortcheckin"
+                },
+                {
+                    "range": {
+                        "from": 6,
+                        "to": 8
+                    },
+                    "code": "00",
+                    "text": "vsl. stark ausgelastet!"
+                }
+            ],
+            "free_texts": [],
+            "problems": [],
+            "night_penalty": 0,
+            "db_costs": 0,
+            "status": "OK"
+        },
+        "returnConnection": {
+            "stops": [
+                {
+                    "station": {
+                        "id": "8000080",
+                        "name": "Dortmund Hbf",
+                        "pos": {
+                            "lat": 51.517896,
+                            "lng": 7.45929
+                        }
+                    },
+                    "arrival": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569290640,
+                        "schedule_time": 1569290640,
+                        "track": "16",
+                        "schedule_track": "16",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": true
+                },
+                {
+                    "station": {
+                        "id": "8000041",
+                        "name": "Bochum Hbf",
+                        "pos": {
+                            "lat": 51.478609,
+                            "lng": 7.223275
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569291360,
+                        "schedule_time": 1569291360,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569291420,
+                        "schedule_time": 1569291420,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000098",
+                        "name": "Essen Hbf",
+                        "pos": {
+                            "lat": 51.451355,
+                            "lng": 7.014793
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569292080,
+                        "schedule_time": 1569292080,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569292200,
+                        "schedule_time": 1569292200,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000086",
+                        "name": "Duisburg Hbf",
+                        "pos": {
+                            "lat": 51.429785,
+                            "lng": 6.775903
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569292920,
+                        "schedule_time": 1569292920,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569293040,
+                        "schedule_time": 1569293040,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000085",
+                        "name": "Düsseldorf Hbf",
+                        "pos": {
+                            "lat": 51.219962,
+                            "lng": 6.794319
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569293760,
+                        "schedule_time": 1569293760,
+                        "track": "16",
+                        "schedule_track": "16",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569293880,
+                        "schedule_time": 1569293880,
+                        "track": "16",
+                        "schedule_track": "16",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8073368",
+                        "name": "Köln Messe/Deutz Gl.11-12",
+                        "pos": {
+                            "lat": 50.941721,
+                            "lng": 6.974067
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569295080,
+                        "schedule_time": 1569295080,
+                        "track": "11",
+                        "schedule_track": "11",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569295200,
+                        "schedule_time": 1569295200,
+                        "track": "11",
+                        "schedule_track": "11",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8003330",
+                        "name": "Köln/Bonn Flughafen",
+                        "pos": {
+                            "lat": 50.878901,
+                            "lng": 7.119302
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569295740,
+                        "schedule_time": 1569295740,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569295860,
+                        "schedule_time": 1569295860,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8005556",
+                        "name": "Siegburg/Bonn",
+                        "pos": {
+                            "lat": 50.793915,
+                            "lng": 7.203026
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569296400,
+                        "schedule_time": 1569296400,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569296460,
+                        "schedule_time": 1569296460,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000667",
+                        "name": "Montabaur",
+                        "pos": {
+                            "lat": 50.444834,
+                            "lng": 7.825333
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569297720,
+                        "schedule_time": 1569297720,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569297780,
+                        "schedule_time": 1569297780,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8003680",
+                        "name": "Limburg Süd",
+                        "pos": {
+                            "lat": 50.382498,
+                            "lng": 8.096112
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569298380,
+                        "schedule_time": 1569298380,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569298440,
+                        "schedule_time": 1569298440,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8070003",
+                        "name": "Frankfurt(M) Flughafen Fernbf",
+                        "pos": {
+                            "lat": 50.053167,
+                            "lng": 8.570185
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569299580,
+                        "schedule_time": 1569299580,
+                        "track": "Fern 4",
+                        "schedule_track": "Fern 4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569299760,
+                        "schedule_time": 1569299760,
+                        "track": "Fern 4",
+                        "schedule_track": "Fern 4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000105",
+                        "name": "Frankfurt(Main)Hbf",
+                        "pos": {
+                            "lat": 50.107145,
+                            "lng": 8.663789
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569300480,
+                        "schedule_time": 1569300480,
+                        "track": "7",
+                        "schedule_track": "7",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569300840,
+                        "schedule_time": 1569300840,
+                        "track": "7",
+                        "schedule_track": "7",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000010",
+                        "name": "Aschaffenburg Hbf",
+                        "pos": {
+                            "lat": 49.980557,
+                            "lng": 9.143697
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569302520,
+                        "schedule_time": 1569302520,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569302580,
+                        "schedule_time": 1569302580,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000260",
+                        "name": "Würzburg Hbf",
+                        "pos": {
+                            "lat": 49.801796,
+                            "lng": 9.93578
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569304860,
+                        "schedule_time": 1569304860,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569305040,
+                        "schedule_time": 1569305040,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000284",
+                        "name": "Nürnberg Hbf",
+                        "pos": {
+                            "lat": 49.445616,
+                            "lng": 11.082989
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569308460,
+                        "schedule_time": 1569308460,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569308640,
+                        "schedule_time": 1569308640,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000261",
+                        "name": "München Hbf",
+                        "pos": {
+                            "lat": 48.140232,
+                            "lng": 11.558335
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569312360,
+                        "schedule_time": 1569312360,
+                        "track": "23",
+                        "schedule_track": "23",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": true,
+                    "enter": false
+                }
+            ],
+            "transports": [
+                {
+                    "move_type": "Transport",
+                    "move": {
+                        "range": {
+                            "from": 0,
+                            "to": 15
+                        },
+                        "category_name": "ICE",
+                        "category_id": 11,
+                        "clasz": 1,
+                        "train_nr": 523,
+                        "line_id": "41",
+                        "name": "ICE 41",
+                        "provider": "DB",
+                        "direction": ""
+                    }
+                }
+            ],
+            "trips": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 15
+                    },
+                    "id": {
+                        "station_id": "8000080",
+                        "train_nr": 523,
+                        "time": 1569290640,
+                        "target_station_id": "8000261",
+                        "target_time": 1569312360,
+                        "line_id": "41"
+                    },
+                    "debug": "fplandb_fv.txt:317548:317574"
+                }
+            ],
+            "attributes": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 15
+                    },
+                    "code": "RI",
+                    "text": "RIS überwachter Verkehr"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 15
+                    },
+                    "code": "QR",
+                    "text": "Railteam Service"
+                },
+                {
+                    "range": {
+                        "from": 6,
+                        "to": 15
+                    },
+                    "code": "BR",
+                    "text": "Bordrestaurant"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 15
+                    },
+                    "code": "CK",
+                    "text": "Komfort Check-in möglich  http://bahn.de/komfortcheckin"
+                },
+                {
+                    "range": {
+                        "from": 5,
+                        "to": 10
+                    },
+                    "code": "00",
+                    "text": "vsl. stark ausgelastet!"
+                }
+            ],
+            "free_texts": [],
+            "problems": [],
+            "night_penalty": 0,
+            "db_costs": 0,
+            "status": "OK"
+        }
+    },
+    {
+        "startConnection": {
+            "stops": [
+                {
+                    "station": {
+                        "id": "8000261",
+                        "name": "München Hbf",
+                        "pos": {
+                            "lat": 48.140232,
+                            "lng": 11.558335
+                        }
+                    },
+                    "arrival": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569291180,
+                        "schedule_time": 1569291180,
+                        "track": "24",
+                        "schedule_track": "24",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": true
+                },
+                {
+                    "station": {
+                        "id": "8000183",
+                        "name": "Ingolstadt Hbf",
+                        "pos": {
+                            "lat": 48.744541,
+                            "lng": 11.437337
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569293340,
+                        "schedule_time": 1569293340,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569293460,
+                        "schedule_time": 1569293460,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000284",
+                        "name": "Nürnberg Hbf",
+                        "pos": {
+                            "lat": 49.445616,
+                            "lng": 11.082989
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569295260,
+                        "schedule_time": 1569295260,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569295920,
+                        "schedule_time": 1569295920,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000260",
+                        "name": "Würzburg Hbf",
+                        "pos": {
+                            "lat": 49.801796,
+                            "lng": 9.93578
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569299160,
+                        "schedule_time": 1569299160,
+                        "track": "7",
+                        "schedule_track": "7",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569299280,
+                        "schedule_time": 1569299280,
+                        "track": "7",
+                        "schedule_track": "7",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000115",
+                        "name": "Fulda",
+                        "pos": {
+                            "lat": 50.554723,
+                            "lng": 9.683977
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569301320,
+                        "schedule_time": 1569301320,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569301440,
+                        "schedule_time": 1569301440,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8003200",
+                        "name": "Kassel-Wilhelmshöhe",
+                        "pos": {
+                            "lat": 51.313114,
+                            "lng": 9.446898
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569303240,
+                        "schedule_time": 1569303240,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569303360,
+                        "schedule_time": 1569303360,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000128",
+                        "name": "Göttingen",
+                        "pos": {
+                            "lat": 51.536815,
+                            "lng": 9.926072
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569304500,
+                        "schedule_time": 1569304500,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569304560,
+                        "schedule_time": 1569304560,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000152",
+                        "name": "Hannover Hbf",
+                        "pos": {
+                            "lat": 52.376761,
+                            "lng": 9.741021
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569308160,
+                        "schedule_time": 1569308160,
+                        "track": "8",
+                        "schedule_track": "8",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569308340,
+                        "schedule_time": 1569308340,
+                        "track": "8",
+                        "schedule_track": "8",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000064",
+                        "name": "Celle",
+                        "pos": {
+                            "lat": 52.620963,
+                            "lng": 10.062634
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569309480,
+                        "schedule_time": 1569309480,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569309600,
+                        "schedule_time": 1569309600,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000168",
+                        "name": "Uelzen",
+                        "pos": {
+                            "lat": 52.969781,
+                            "lng": 10.553053
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569310800,
+                        "schedule_time": 1569310800,
+                        "track": "102",
+                        "schedule_track": "102",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569310920,
+                        "schedule_time": 1569310920,
+                        "track": "102",
+                        "schedule_track": "102",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000238",
+                        "name": "Lüneburg",
+                        "pos": {
+                            "lat": 53.249656,
+                            "lng": 10.41989
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569311760,
+                        "schedule_time": 1569311760,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569311880,
+                        "schedule_time": 1569311880,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000147",
+                        "name": "Hamburg-Harburg",
+                        "pos": {
+                            "lat": 53.455908,
+                            "lng": 9.991701
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569312960,
+                        "schedule_time": 1569312960,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569313080,
+                        "schedule_time": 1569313080,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002549",
+                        "name": "Hamburg Hbf",
+                        "pos": {
+                            "lat": 53.552736,
+                            "lng": 10.006909
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569313800,
+                        "schedule_time": 1569313800,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569313980,
+                        "schedule_time": 1569313980,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002548",
+                        "name": "Hamburg Dammtor",
+                        "pos": {
+                            "lat": 53.560751,
+                            "lng": 9.989566
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569314160,
+                        "schedule_time": 1569314160,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569314280,
+                        "schedule_time": 1569314280,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002553",
+                        "name": "Hamburg-Altona",
+                        "pos": {
+                            "lat": 53.552695,
+                            "lng": 9.935175
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569314700,
+                        "schedule_time": 1569314700,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": true,
+                    "enter": false
+                }
+            ],
+            "transports": [
+                {
+                    "move_type": "Transport",
+                    "move": {
+                        "range": {
+                            "from": 0,
+                            "to": 14
+                        },
+                        "category_name": "ICE",
+                        "category_id": 11,
+                        "clasz": 1,
+                        "train_nr": 888,
+                        "line_id": "25",
+                        "name": "ICE 25",
+                        "provider": "DB",
+                        "direction": ""
+                    }
+                }
+            ],
+            "trips": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "id": {
+                        "station_id": "8000261",
+                        "train_nr": 888,
+                        "time": 1569291180,
+                        "target_station_id": "8002553",
+                        "target_time": 1569314700,
+                        "line_id": "25"
+                    },
+                    "debug": "fplandb_fv.txt:439351:439374"
+                }
+            ],
+            "attributes": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "RI",
+                    "text": "RIS überwachter Verkehr"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "QR",
+                    "text": "Railteam Service"
+                },
+                {
+                    "range": {
+                        "from": 2,
+                        "to": 14
+                    },
+                    "code": "BR",
+                    "text": "Bordrestaurant"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "CK",
+                    "text": "Komfort Check-in möglich  http://bahn.de/komfortcheckin"
+                }
+            ],
+            "free_texts": [],
+            "problems": [],
+            "night_penalty": 0,
+            "db_costs": 0,
+            "status": "OK"
+        },
+        "returnConnection": {
+            "stops": [
+                {
+                    "station": {
+                        "id": "8002553",
+                        "name": "Hamburg-Altona",
+                        "pos": {
+                            "lat": 53.552695,
+                            "lng": 9.935175
+                        }
+                    },
+                    "arrival": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569287040,
+                        "schedule_time": 1569287040,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": true
+                },
+                {
+                    "station": {
+                        "id": "8002548",
+                        "name": "Hamburg Dammtor",
+                        "pos": {
+                            "lat": 53.560751,
+                            "lng": 9.989566
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569287400,
+                        "schedule_time": 1569287400,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569287520,
+                        "schedule_time": 1569287520,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002549",
+                        "name": "Hamburg Hbf",
+                        "pos": {
+                            "lat": 53.552736,
+                            "lng": 10.006909
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569287760,
+                        "schedule_time": 1569287760,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569288000,
+                        "schedule_time": 1569288000,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000147",
+                        "name": "Hamburg-Harburg",
+                        "pos": {
+                            "lat": 53.455908,
+                            "lng": 9.991701
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569288600,
+                        "schedule_time": 1569288600,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569288720,
+                        "schedule_time": 1569288720,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000238",
+                        "name": "Lüneburg",
+                        "pos": {
+                            "lat": 53.249656,
+                            "lng": 10.41989
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569289740,
+                        "schedule_time": 1569289740,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569289860,
+                        "schedule_time": 1569289860,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000168",
+                        "name": "Uelzen",
+                        "pos": {
+                            "lat": 52.969781,
+                            "lng": 10.553053
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569290760,
+                        "schedule_time": 1569290760,
+                        "track": "101",
+                        "schedule_track": "101",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569290880,
+                        "schedule_time": 1569290880,
+                        "track": "101",
+                        "schedule_track": "101",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000064",
+                        "name": "Celle",
+                        "pos": {
+                            "lat": 52.620963,
+                            "lng": 10.062634
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569292500,
+                        "schedule_time": 1569292500,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569292620,
+                        "schedule_time": 1569292620,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000152",
+                        "name": "Hannover Hbf",
+                        "pos": {
+                            "lat": 52.376761,
+                            "lng": 9.741021
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569293760,
+                        "schedule_time": 1569293760,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569293940,
+                        "schedule_time": 1569293940,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000128",
+                        "name": "Göttingen",
+                        "pos": {
+                            "lat": 51.536815,
+                            "lng": 9.926072
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569297180,
+                        "schedule_time": 1569297180,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569297300,
+                        "schedule_time": 1569297300,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8003200",
+                        "name": "Kassel-Wilhelmshöhe",
+                        "pos": {
+                            "lat": 51.313114,
+                            "lng": 9.446898
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569298440,
+                        "schedule_time": 1569298440,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569298560,
+                        "schedule_time": 1569298560,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000115",
+                        "name": "Fulda",
+                        "pos": {
+                            "lat": 50.554723,
+                            "lng": 9.683977
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569300360,
+                        "schedule_time": 1569300360,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569300480,
+                        "schedule_time": 1569300480,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000150",
+                        "name": "Hanau Hbf",
+                        "pos": {
+                            "lat": 50.120953,
+                            "lng": 8.929
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569302760,
+                        "schedule_time": 1569302760,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569302880,
+                        "schedule_time": 1569302880,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000105",
+                        "name": "Frankfurt(Main)Hbf",
+                        "pos": {
+                            "lat": 50.107145,
+                            "lng": 8.663789
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569303840,
+                        "schedule_time": 1569303840,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569304200,
+                        "schedule_time": 1569304200,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000244",
+                        "name": "Mannheim Hbf",
+                        "pos": {
+                            "lat": 49.479354,
+                            "lng": 8.468921
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569306420,
+                        "schedule_time": 1569306420,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569306600,
+                        "schedule_time": 1569306600,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000096",
+                        "name": "Stuttgart Hbf",
+                        "pos": {
+                            "lat": 48.784084,
+                            "lng": 9.181635
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569308880,
+                        "schedule_time": 1569308880,
+                        "track": "16",
+                        "schedule_track": "16",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569309240,
+                        "schedule_time": 1569309240,
+                        "track": "16",
+                        "schedule_track": "16",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000170",
+                        "name": "Ulm Hbf",
+                        "pos": {
+                            "lat": 48.399437,
+                            "lng": 9.982227
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569312600,
+                        "schedule_time": 1569312600,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569312720,
+                        "schedule_time": 1569312720,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000013",
+                        "name": "Augsburg Hbf",
+                        "pos": {
+                            "lat": 48.365441,
+                            "lng": 10.88557
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569315180,
+                        "schedule_time": 1569315180,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569315300,
+                        "schedule_time": 1569315300,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8004158",
+                        "name": "München-Pasing",
+                        "pos": {
+                            "lat": 48.149852,
+                            "lng": 11.461872
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569316680,
+                        "schedule_time": 1569316680,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569316800,
+                        "schedule_time": 1569316800,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000261",
+                        "name": "München Hbf",
+                        "pos": {
+                            "lat": 48.140232,
+                            "lng": 11.558335
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569317220,
+                        "schedule_time": 1569317220,
+                        "track": "18",
+                        "schedule_track": "18",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": true,
+                    "enter": false
+                }
+            ],
+            "transports": [
+                {
+                    "move_type": "Transport",
+                    "move": {
+                        "range": {
+                            "from": 0,
+                            "to": 18
+                        },
+                        "category_name": "ICE",
+                        "category_id": 11,
+                        "clasz": 1,
+                        "train_nr": 591,
+                        "line_id": "11",
+                        "name": "ICE 11",
+                        "provider": "DB",
+                        "direction": ""
+                    }
+                }
+            ],
+            "trips": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "id": {
+                        "station_id": "8002553",
+                        "train_nr": 591,
+                        "time": 1569287040,
+                        "target_station_id": "8000261",
+                        "target_time": 1569317220,
+                        "line_id": "11"
+                    },
+                    "debug": "fplandb_fv.txt:341042:341071"
+                }
+            ],
+            "attributes": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "code": "RI",
+                    "text": "RIS überwachter Verkehr"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "code": "QR",
+                    "text": "Railteam Service"
+                },
+                {
+                    "range": {
+                        "from": 7,
+                        "to": 18
+                    },
+                    "code": "BR",
+                    "text": "Bordrestaurant"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "code": "CK",
+                    "text": "Komfort Check-in möglich  http://bahn.de/komfortcheckin"
+                }
+            ],
+            "free_texts": [],
+            "problems": [],
+            "night_penalty": 0,
+            "db_costs": 0,
+            "status": "OK"
+        }
+    },
+    {
+        "startConnection": {
+            "stops": [
+                {
+                    "station": {
+                        "id": "8000261",
+                        "name": "München Hbf",
+                        "pos": {
+                            "lat": 48.140232,
+                            "lng": 11.558335
+                        }
+                    },
+                    "arrival": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569294960,
+                        "schedule_time": 1569294960,
+                        "track": "19",
+                        "schedule_track": "19",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": true
+                },
+                {
+                    "station": {
+                        "id": "8000183",
+                        "name": "Ingolstadt Hbf",
+                        "pos": {
+                            "lat": 48.744541,
+                            "lng": 11.437337
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569297180,
+                        "schedule_time": 1569297180,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569297480,
+                        "schedule_time": 1569297480,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000284",
+                        "name": "Nürnberg Hbf",
+                        "pos": {
+                            "lat": 49.445616,
+                            "lng": 11.082989
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569299400,
+                        "schedule_time": 1569299400,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569299580,
+                        "schedule_time": 1569299580,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000260",
+                        "name": "Würzburg Hbf",
+                        "pos": {
+                            "lat": 49.801796,
+                            "lng": 9.93578
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569302640,
+                        "schedule_time": 1569302640,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569302820,
+                        "schedule_time": 1569302820,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000115",
+                        "name": "Fulda",
+                        "pos": {
+                            "lat": 50.554723,
+                            "lng": 9.683977
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569304860,
+                        "schedule_time": 1569304860,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569304980,
+                        "schedule_time": 1569304980,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8003200",
+                        "name": "Kassel-Wilhelmshöhe",
+                        "pos": {
+                            "lat": 51.313114,
+                            "lng": 9.446898
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569306840,
+                        "schedule_time": 1569306840,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569306960,
+                        "schedule_time": 1569306960,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000128",
+                        "name": "Göttingen",
+                        "pos": {
+                            "lat": 51.536815,
+                            "lng": 9.926072
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569308100,
+                        "schedule_time": 1569308100,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569308160,
+                        "schedule_time": 1569308160,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000152",
+                        "name": "Hannover Hbf",
+                        "pos": {
+                            "lat": 52.376761,
+                            "lng": 9.741021
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569311640,
+                        "schedule_time": 1569311640,
+                        "track": "8",
+                        "schedule_track": "8",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569311940,
+                        "schedule_time": 1569311940,
+                        "track": "8",
+                        "schedule_track": "8",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000064",
+                        "name": "Celle",
+                        "pos": {
+                            "lat": 52.620963,
+                            "lng": 10.062634
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569313080,
+                        "schedule_time": 1569313080,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569313200,
+                        "schedule_time": 1569313200,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000168",
+                        "name": "Uelzen",
+                        "pos": {
+                            "lat": 52.969781,
+                            "lng": 10.553053
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569314400,
+                        "schedule_time": 1569314400,
+                        "track": "102",
+                        "schedule_track": "102",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569314520,
+                        "schedule_time": 1569314520,
+                        "track": "102",
+                        "schedule_track": "102",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000238",
+                        "name": "Lüneburg",
+                        "pos": {
+                            "lat": 53.249656,
+                            "lng": 10.41989
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569315360,
+                        "schedule_time": 1569315360,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569315480,
+                        "schedule_time": 1569315480,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000147",
+                        "name": "Hamburg-Harburg",
+                        "pos": {
+                            "lat": 53.455908,
+                            "lng": 9.991701
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569316620,
+                        "schedule_time": 1569316620,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569316740,
+                        "schedule_time": 1569316740,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002549",
+                        "name": "Hamburg Hbf",
+                        "pos": {
+                            "lat": 53.552736,
+                            "lng": 10.006909
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569317460,
+                        "schedule_time": 1569317460,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569317640,
+                        "schedule_time": 1569317640,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002548",
+                        "name": "Hamburg Dammtor",
+                        "pos": {
+                            "lat": 53.560751,
+                            "lng": 9.989566
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569317820,
+                        "schedule_time": 1569317820,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569317940,
+                        "schedule_time": 1569317940,
+                        "track": "3",
+                        "schedule_track": "3",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002553",
+                        "name": "Hamburg-Altona",
+                        "pos": {
+                            "lat": 53.552695,
+                            "lng": 9.935175
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569318360,
+                        "schedule_time": 1569318360,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": true,
+                    "enter": false
+                }
+            ],
+            "transports": [
+                {
+                    "move_type": "Transport",
+                    "move": {
+                        "range": {
+                            "from": 0,
+                            "to": 14
+                        },
+                        "category_name": "ICE",
+                        "category_id": 11,
+                        "clasz": 1,
+                        "train_nr": 1684,
+                        "line_id": "25",
+                        "name": "ICE 25",
+                        "provider": "DB",
+                        "direction": ""
+                    }
+                }
+            ],
+            "trips": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "id": {
+                        "station_id": "8000261",
+                        "train_nr": 1684,
+                        "time": 1569294960,
+                        "target_station_id": "8002553",
+                        "target_time": 1569318360,
+                        "line_id": "25"
+                    },
+                    "debug": "fplandb_fv.txt:80152:80177"
+                }
+            ],
+            "attributes": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "RI",
+                    "text": "RIS überwachter Verkehr"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "FB",
+                    "text": "Fahrradmitnahme begrenzt möglich"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "QR",
+                    "text": "Railteam Service"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "FR",
+                    "text": "Fahrradmitnahme reservierungspflichtig"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "BR",
+                    "text": "Bordrestaurant"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 14
+                    },
+                    "code": "CK",
+                    "text": "Komfort Check-in möglich  http://bahn.de/komfortcheckin"
+                }
+            ],
+            "free_texts": [],
+            "problems": [],
+            "night_penalty": 0,
+            "db_costs": 0,
+            "status": "OK"
+        },
+        "returnConnection": {
+            "stops": [
+                {
+                    "station": {
+                        "id": "8002553",
+                        "name": "Hamburg-Altona",
+                        "pos": {
+                            "lat": 53.552695,
+                            "lng": 9.935175
+                        }
+                    },
+                    "arrival": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569287040,
+                        "schedule_time": 1569287040,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": true
+                },
+                {
+                    "station": {
+                        "id": "8002548",
+                        "name": "Hamburg Dammtor",
+                        "pos": {
+                            "lat": 53.560751,
+                            "lng": 9.989566
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569287400,
+                        "schedule_time": 1569287400,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569287520,
+                        "schedule_time": 1569287520,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8002549",
+                        "name": "Hamburg Hbf",
+                        "pos": {
+                            "lat": 53.552736,
+                            "lng": 10.006909
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569287760,
+                        "schedule_time": 1569287760,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569288000,
+                        "schedule_time": 1569288000,
+                        "track": "14",
+                        "schedule_track": "14",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000147",
+                        "name": "Hamburg-Harburg",
+                        "pos": {
+                            "lat": 53.455908,
+                            "lng": 9.991701
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569288600,
+                        "schedule_time": 1569288600,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569288720,
+                        "schedule_time": 1569288720,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000238",
+                        "name": "Lüneburg",
+                        "pos": {
+                            "lat": 53.249656,
+                            "lng": 10.41989
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569289740,
+                        "schedule_time": 1569289740,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569289860,
+                        "schedule_time": 1569289860,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000168",
+                        "name": "Uelzen",
+                        "pos": {
+                            "lat": 52.969781,
+                            "lng": 10.553053
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569290760,
+                        "schedule_time": 1569290760,
+                        "track": "101",
+                        "schedule_track": "101",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569290880,
+                        "schedule_time": 1569290880,
+                        "track": "101",
+                        "schedule_track": "101",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000064",
+                        "name": "Celle",
+                        "pos": {
+                            "lat": 52.620963,
+                            "lng": 10.062634
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569292500,
+                        "schedule_time": 1569292500,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569292620,
+                        "schedule_time": 1569292620,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000152",
+                        "name": "Hannover Hbf",
+                        "pos": {
+                            "lat": 52.376761,
+                            "lng": 9.741021
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569293760,
+                        "schedule_time": 1569293760,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569293940,
+                        "schedule_time": 1569293940,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000128",
+                        "name": "Göttingen",
+                        "pos": {
+                            "lat": 51.536815,
+                            "lng": 9.926072
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569297180,
+                        "schedule_time": 1569297180,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569297300,
+                        "schedule_time": 1569297300,
+                        "track": "10",
+                        "schedule_track": "10",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8003200",
+                        "name": "Kassel-Wilhelmshöhe",
+                        "pos": {
+                            "lat": 51.313114,
+                            "lng": 9.446898
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569298440,
+                        "schedule_time": 1569298440,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569298560,
+                        "schedule_time": 1569298560,
+                        "track": "1",
+                        "schedule_track": "1",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000115",
+                        "name": "Fulda",
+                        "pos": {
+                            "lat": 50.554723,
+                            "lng": 9.683977
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569300360,
+                        "schedule_time": 1569300360,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569300480,
+                        "schedule_time": 1569300480,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000150",
+                        "name": "Hanau Hbf",
+                        "pos": {
+                            "lat": 50.120953,
+                            "lng": 8.929
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569302760,
+                        "schedule_time": 1569302760,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569302880,
+                        "schedule_time": 1569302880,
+                        "track": "6",
+                        "schedule_track": "6",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000105",
+                        "name": "Frankfurt(Main)Hbf",
+                        "pos": {
+                            "lat": 50.107145,
+                            "lng": 8.663789
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569303840,
+                        "schedule_time": 1569303840,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569304200,
+                        "schedule_time": 1569304200,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000244",
+                        "name": "Mannheim Hbf",
+                        "pos": {
+                            "lat": 49.479354,
+                            "lng": 8.468921
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569306420,
+                        "schedule_time": 1569306420,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569306600,
+                        "schedule_time": 1569306600,
+                        "track": "5",
+                        "schedule_track": "5",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000096",
+                        "name": "Stuttgart Hbf",
+                        "pos": {
+                            "lat": 48.784084,
+                            "lng": 9.181635
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569308880,
+                        "schedule_time": 1569308880,
+                        "track": "16",
+                        "schedule_track": "16",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569309240,
+                        "schedule_time": 1569309240,
+                        "track": "16",
+                        "schedule_track": "16",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000170",
+                        "name": "Ulm Hbf",
+                        "pos": {
+                            "lat": 48.399437,
+                            "lng": 9.982227
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569312600,
+                        "schedule_time": 1569312600,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569312720,
+                        "schedule_time": 1569312720,
+                        "track": "2",
+                        "schedule_track": "2",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000013",
+                        "name": "Augsburg Hbf",
+                        "pos": {
+                            "lat": 48.365441,
+                            "lng": 10.88557
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569315180,
+                        "schedule_time": 1569315180,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569315300,
+                        "schedule_time": 1569315300,
+                        "track": "4",
+                        "schedule_track": "4",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8004158",
+                        "name": "München-Pasing",
+                        "pos": {
+                            "lat": 48.149852,
+                            "lng": 11.461872
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569316680,
+                        "schedule_time": 1569316680,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 1569316800,
+                        "schedule_time": 1569316800,
+                        "track": "9",
+                        "schedule_track": "9",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": false,
+                    "enter": false
+                },
+                {
+                    "station": {
+                        "id": "8000261",
+                        "name": "München Hbf",
+                        "pos": {
+                            "lat": 48.140232,
+                            "lng": 11.558335
+                        }
+                    },
+                    "arrival": {
+                        "time": 1569317220,
+                        "schedule_time": 1569317220,
+                        "track": "18",
+                        "schedule_track": "18",
+                        "valid": true,
+                        "reason": "SCHEDULE"
+                    },
+                    "departure": {
+                        "time": 0,
+                        "schedule_time": 0,
+                        "track": "",
+                        "schedule_track": "",
+                        "valid": false,
+                        "reason": "SCHEDULE"
+                    },
+                    "exit": true,
+                    "enter": false
+                }
+            ],
+            "transports": [
+                {
+                    "move_type": "Transport",
+                    "move": {
+                        "range": {
+                            "from": 0,
+                            "to": 18
+                        },
+                        "category_name": "ICE",
+                        "category_id": 11,
+                        "clasz": 1,
+                        "train_nr": 591,
+                        "line_id": "11",
+                        "name": "ICE 11",
+                        "provider": "DB",
+                        "direction": ""
+                    }
+                }
+            ],
+            "trips": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "id": {
+                        "station_id": "8002553",
+                        "train_nr": 591,
+                        "time": 1569287040,
+                        "target_station_id": "8000261",
+                        "target_time": 1569317220,
+                        "line_id": "11"
+                    },
+                    "debug": "fplandb_fv.txt:341042:341071"
+                }
+            ],
+            "attributes": [
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "code": "RI",
+                    "text": "RIS überwachter Verkehr"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "code": "QR",
+                    "text": "Railteam Service"
+                },
+                {
+                    "range": {
+                        "from": 7,
+                        "to": 18
+                    },
+                    "code": "BR",
+                    "text": "Bordrestaurant"
+                },
+                {
+                    "range": {
+                        "from": 0,
+                        "to": 18
+                    },
+                    "code": "CK",
+                    "text": "Komfort Check-in möglich  http://bahn.de/komfortcheckin"
+                }
+            ],
+            "free_texts": [],
+            "problems": [],
+            "night_penalty": 0,
+            "db_costs": 0,
+            "status": "OK"
+        }
+    }
+]

@@ -60,6 +60,14 @@ function RoundtripOutline(): JSX.Element {
         }
     }
 
+    let invalidNumberOfCancels = false;
+    if (fileContent && value) {
+        invalidNumberOfCancels = value >= fileContent?.content.length;
+        if (invalidNumberOfCancels) {
+            window.alert('Number of canceled trips to high');
+        }
+    }
+
     return (
         <div>
             <label>
@@ -70,7 +78,7 @@ function RoundtripOutline(): JSX.Element {
                     onClick={(e) => e.stopPropagation()}
                     style={{ border: '1px solid black', padding: '10px', borderRadius: '5px', cursor: 'pointer' }}
                 >
-                    {fileContent ? (
+                    {fileContent && !invalidNumberOfCancels ? (
                         <pre>"{fileContent.name}" uploaded</pre>
                     ) : (
                         <>
@@ -93,7 +101,7 @@ function RoundtripOutline(): JSX.Element {
                 </div>
                 {value !== null && fileContent !== null && (
                     <Link
-                        to={`/praktikum/${encodeURIComponent(JSON.stringify({ roundTrips: fileContent.content, cancelRoundTrips: value }))}`}>
+                        to={`/praktikum/${encodeURIComponent(JSON.stringify({ roundTrips: fileContent.content, cancelRoundTrips: value, useWorker: true }))}`}>
                         <button className="inline-flex items-baseline px-3 py-1 rounded text-sm bg-db-red-500 hover:bg-db-red-600 text-white">Berechne</button>
                     </Link>
                 )}

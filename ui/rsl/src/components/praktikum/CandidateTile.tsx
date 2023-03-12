@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import RoundtripOutline from './Outline';
 import './styles.css';
 import ReactDOM from 'react-dom';
 import { BeforeAfterView } from './BeforeAfterView';
+import { CancelRoundtripResult } from './types';
+import { CostFunctions } from './FindAssignment';
 
-interface LabelProps {
-    roundTrips: any[];
+export interface CandidateTileProps { costFunctionName: keyof CostFunctions, cancelResult: CancelRoundtripResult[] }
+
+type CostFunctionLabels = { [key in keyof CostFunctions]: string }
+
+const CostFunctionLabels: CostFunctionLabels = {
+    capacity: 'Fokus auf Kapazitäten',
+    expDelay: 'Fokus auf Verspätungen',
+    capacityTimesExpDelay: 'Fokus auf Kapazitäten und Verspätungen'
 }
 
-const CandidateTile: React.FC<LabelProps> = ({ roundTrips }) => {
+const CandidateTile: React.FC<CandidateTileProps> = ({ costFunctionName, cancelResult }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openPopup = () => {
@@ -21,8 +28,9 @@ const CandidateTile: React.FC<LabelProps> = ({ roundTrips }) => {
 
     return (
         <div className="candiate-tile">
+            <h1>{CostFunctionLabels[costFunctionName]}:</h1>
             <div onClick={openPopup} className="small-labels">
-                {roundTrips.map((roundTrip, index) => {
+                {cancelResult.map((roundTrip, index) => {
                     const { startConnection, returnConnection } = roundTrip.canceledRoundtrip;
                     const startTripId = startConnection.trips[0].id;
                     const returnTripId = returnConnection.trips[0].id;
@@ -38,7 +46,7 @@ const CandidateTile: React.FC<LabelProps> = ({ roundTrips }) => {
                 })}
             </div>
             <Popup isOpen={isOpen} onClose={closePopup}>
-                {<BeforeAfterView canceldRoundTrips={roundTrips} />}
+                {<BeforeAfterView canceldRoundTrips={cancelResult} />}
             </Popup>
         </div>
     );

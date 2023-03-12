@@ -6,7 +6,7 @@ import { scaleLinear } from '@visx/scale';
 import { AxisLeft, AxisBottom } from '@visx/axis';
 import { GridRows, GridColumns } from '@visx/grid';
 import { DistThresholdData } from './types';
-export const background = '#f3f3f3';
+export const background = 'white';
 
 // scales
 const defaultMargin = { top: 40, right: 30, bottom: 50, left: 40 };
@@ -19,9 +19,28 @@ type ThresholdProps = {
   height: number;
   margin?: { top: number; right: number; bottom: number; left: number };
   thresholdDataArray: DistThresholdData[];
+  xLabel: string;
+  yLabel: string;
 };
 
-export function ThresholdChart({ width, height, margin = defaultMargin, thresholdDataArray }: ThresholdProps) {
+function Legend() {
+  return <div className="legend">
+    <div className="legend-item">
+      <svg width="40" height="20">
+        <line x1="0" y1="10" x2="40" y2="10" stroke="#000" strokeWidth="2" strokeDasharray="0" />
+      </svg>
+      <span className="legend-label">Vor den Ausfällen</span>
+    </div>
+    <div className="legend-item">
+      <svg width="40" height="20">
+        <line x1="0" y1="10" x2="40" y2="10" stroke="#000" strokeWidth="2" strokeDasharray="4,4" />
+      </svg>
+      <span className="legend-label">Nach den Ausfällen</span>
+    </div>
+  </div>
+}
+
+export function ThresholdChart({ width, height, margin = defaultMargin, thresholdDataArray, xLabel, yLabel }: ThresholdProps) {
   if (width < 10) return null;
 
   // bounds
@@ -47,15 +66,15 @@ export function ThresholdChart({ width, height, margin = defaultMargin, threshol
   return (
     <div>
       <svg width={width} height={height}>
-        <rect x={0} y={0} width={width} height={height} fill={background} rx={14} />
+        <rect x={0} y={0} width={width} height={height} fill={background} />
         <Group left={margin.left} top={margin.top}>
           <GridRows scale={yScale} width={xMax} height={yMax} stroke="#e0e0e0" />
           <GridColumns scale={xScale} width={xMax} height={yMax} stroke="#e0e0e0" />
           <line x1={xMax} x2={xMax} y1={0} y2={yMax} stroke="#e0e0e0" />
-          <AxisBottom top={yMax} scale={xScale} numTicks={width > 520 ? 10 : 5} />
-          <AxisLeft scale={yScale} />
-          <text x="-70" y="15" transform="rotate(-90)" fontSize={10}>
-            Temperature (°F)
+          <AxisBottom top={yMax} scale={xScale} numTicks={width > 520 ? 10 : 5} label={xLabel} />
+          <AxisLeft scale={yScale} numTicks={width > 520 ? 10 : 5} />
+          <text x="0" y="-10" fontSize={10}>
+            {yLabel}
           </text>
           <Threshold<DistThresholdData>
             id={`${Math.random()}`}
@@ -95,6 +114,7 @@ export function ThresholdChart({ width, height, margin = defaultMargin, threshol
           />
         </Group>
       </svg>
+      <Legend></Legend>
     </div>
   );
 }
