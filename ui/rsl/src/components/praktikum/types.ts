@@ -31,6 +31,7 @@ export interface BeforeAfterDist {
 export interface BeforeAfterCancel {
     delayDiff: DelayDiff;
     overallCost: number;
+    overallCapacityCost: number;
     distDiffs: NumberObject;
     beforeAfterDist: BeforeAfterDist;
 }

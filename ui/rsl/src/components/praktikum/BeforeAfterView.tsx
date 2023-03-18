@@ -1,7 +1,8 @@
-import React, { ReactNode, useState } from 'react';
+import React from 'react';
 import { ThresholdChart } from "./ThresholdChart";
 import { CpacityChart } from "./CapacityChart";
 import { CancelRoundtripResult, NumberObject, ThresholdDataObject } from "./types";
+import { Tab, Tabs } from './Tabs';
 
 
 interface BeforeAfterViewProps {
@@ -51,38 +52,3 @@ export const BeforeAfterView: React.FC<BeforeAfterViewProps> = ({ canceldRoundTr
         </>
     )
 }
-
-
-interface Tab {
-    label: string;
-    content: ReactNode;
-}
-
-interface TabsProp {
-    tabs: Tab[];
-}
-
-const Tabs: React.FC<TabsProp> = ({ tabs }) => {
-    const [activeTabIndex, setActiveTabIndex] = useState(0);
-
-    const handleTabClick = (index: number) => {
-        setActiveTabIndex(index);
-    };
-
-    return (
-        <div>
-            <div className="tab-row">
-                {tabs.map((tab, index) => (
-                    <button
-                        key={index}
-                        onClick={() => handleTabClick(index)}
-                        className={index === activeTabIndex ? "active" : ""}
-                    >
-                        {tab.label}
-                    </button>
-                ))}
-            </div>
-            <div className="tab-content">{tabs[activeTabIndex].content}</div>
-        </div>
-    );
-};

@@ -77,13 +77,12 @@ async function applyMeasures(measures: MeasureWrapper[], costFunction: Function)
   });
 
   const groupStatisticsAfterMeasure = await sendPaxMonGroupStatisticsRequest(groupStatisticsContent);
-  const groupStatisticsAfterMeasure2 = await sendPaxMonGroupStatisticsRequest(groupStatisticsContent);
 
   const updatedTrips = measuresResult.updates.updated_trips;
   const { transformedUpdatedTrips, overallCapacityCost, distDiffs, beforeAfterDist } = getTransformedUpdatedTrips(updatedTrips);
   const delayDiff = getDelayDiff(groupStatisticsBeforeMeasure, groupStatisticsAfterMeasure);
 
-  const beforeAfter = { transformedUpdatedTrips, overallCost: costFunction(overallCapacityCost, delayDiff), distDiffs, beforeAfterDist, delayDiff };
+  const beforeAfter = { transformedUpdatedTrips, overallCost: costFunction(overallCapacityCost, delayDiff), distDiffs, beforeAfterDist, delayDiff, overallCapacityCost };
 
   await sendPaxMonDestroyUniverseRequest({
     universe: tempUniverse.universe
