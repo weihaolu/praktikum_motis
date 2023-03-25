@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 type FileContent = { name: string, content: any };
 
-function RoundtripOutline(): JSX.Element {
+
+export interface RoundtripProps { progress: number; setProgress: Function }
+const RoundtripOutline: React.FC<RoundtripProps> = ({ progress, setProgress }) => {
     const [fileContent, setFileContent] = useState<FileContent | null>(null);
     const [value, setValue] = useState<number | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -99,16 +101,17 @@ function RoundtripOutline(): JSX.Element {
                         className="block w-full text-sm rounded-md bg-white dark:bg-gray-700 border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                     />
                 </div>
-                {value !== null && fileContent !== null && (
+                {value !== null && fileContent !== null && progress === -1 && (
                     <Link
                         to={`/praktikum/${encodeURIComponent(JSON.stringify({ roundTrips: fileContent.content, cancelRoundTrips: value, useWorker: true }))}`}>
-                        <button className="inline-flex items-baseline px-3 py-1 rounded text-sm bg-db-red-500 hover:bg-db-red-600 text-white">Berechne</button>
+                        <button onClick={() => setProgress(0)} className="inline-flex items-baseline px-3 py-1 rounded text-sm bg-db-red-500 hover:bg-db-red-600 text-white">Berechne</button>
                     </Link>
                 )}
             </label>
+            {progress > -1 && fileContent && value &&
+                (<div>Fortschritt: {Math.trunc(progress / (fileContent.content.length * value * 3) * 100)}%</div>)}
         </div>
     );
 }
-
 
 export default RoundtripOutline;

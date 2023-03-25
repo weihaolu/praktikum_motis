@@ -88,6 +88,8 @@ async function applyMeasures(measures: MeasureWrapper[], costFunction: Function)
     universe: tempUniverse.universe
   });
 
+  postMessage({ type: 'applyMeasure' });
+
   return beforeAfter;
 }
 
@@ -349,5 +351,5 @@ onmessage = async (e: { data: { roundTrips: Roundtrip, cancelRoundTrips: number,
   const costFunction = CostFunctions[costFunctionName];
   setApiEndpoint(apiEndpoint);
   const result = await getBestAssignment(roundTrips, cancelRoundTrips, costFunction, systemTime)
-  postMessage(result);
+  postMessage({ type: 'result', result });
 }

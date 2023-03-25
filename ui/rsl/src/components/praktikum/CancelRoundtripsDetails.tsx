@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import CandidateTile, { CandidateTileProps } from "./CandidateTile";
 import { Roundtrip } from "./types";
 import FindAssignmentWorker from "./FindAssignment?worker";
@@ -21,10 +21,16 @@ export const CostFunctionLabels: CostFunctionLabels = {
 }
 
 function CancelRoundtripDetails(): JSX.Element {
+    const [setProgress] = (useOutletContext as any)();
     const queryClient = useQueryClient();
     const params = useParams();
     const [candidates, setCandidates] = useState<CandidateTileProps[]>([]);
     const [isOpen, setIsOpen] = useState(-1);
+    const [solutionFound, setSolutionsFound] = useState(0);
+
+    if (solutionFound === Object.keys(CostFunctions).length) {
+        setProgress(-1);
+    }
 
     const openPopupFactory = (tabIndex = 0) => {
         return () => {
@@ -50,11 +56,17 @@ function CancelRoundtripDetails(): JSX.Element {
                 if (useWorker) {
                     const myWorker = new FindAssignmentWorker();
                     myWorker.postMessage({ roundTrips, cancelRoundTrips, costFunctionName, apiEndpoint: getApiEndpoint(), systemTime });
-                    myWorker.onmessage = (e) => {
-                        const result = e.data;
-                        setCandidates((prevCandidates) => [...prevCandidates, { costFunctionName: costFunctionName as keyof CostFunctions, cancelResult: result }])
-                        myWorker.terminate();
-                    }
+                    myWorker.onmessage = (m) => {
+                        if (m.data.type === 'result') {
+                            const result = m.data.result;
+                            setCandidates((prevCandidates) => [...prevCandidates, { costFunctionName: costFunctionName as keyof CostFunctions, cancelResult: result }])
+                            myWorker.terminate();
+                            setSolutionsFound((prev) => prev + 1);
+                        }
+                        if (m.data.type === 'applyMeasure') {
+                            setProgress((prevProgress: number) => prevProgress + 1)
+                        }
+                    };
                 } else {
                     const costFunction = CostFunctions[costFunctionName as keyof CostFunctions];
                     getBestAssignment(roundTrips, cancelRoundTrips, costFunction, systemTime).then(result => {
