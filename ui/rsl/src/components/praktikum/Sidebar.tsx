@@ -5,7 +5,7 @@ type FileContent = { name: string, content: any };
 
 
 export interface RoundtripProps { progress: number; setProgress: Function }
-const RoundtripOutline: React.FC<RoundtripProps> = ({ progress, setProgress }) => {
+const RoundtripSidebar: React.FC<RoundtripProps> = ({ progress, setProgress }) => {
     const [fileContent, setFileContent] = useState<FileContent | null>(null);
     const [value, setValue] = useState<number | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -114,4 +114,4 @@ const RoundtripOutline: React.FC<RoundtripProps> = ({ progress, setProgress }) =
     );
 }
 
-export default RoundtripOutline;
+export default RoundtripSidebar;

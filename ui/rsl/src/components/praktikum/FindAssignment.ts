@@ -225,8 +225,15 @@ export const CostFunctions: CostFunctions = {
   capacityTimesExpDelay
 }
 
-//only possibleAssignments can be made for trips.length number of trips <=> trips.length - 5 trips must be completely canceled
-export async function getBestAssignment(trips: any, numberOfCanceledTrips: number, costFunction: Function, systemTime?: number, result: CancelRoundtripResult[] = [], previousMeasures: MeasureWrapper[] = []): Promise<CancelRoundtripResult[]> {
+export async function getBestAssignment(
+  roundtrips: Roundtrip[],
+  numberOfCanceledTrips: number,
+  costFunction: Function,
+  systemTime?: number,
+  result: CancelRoundtripResult[] = [],
+  previousMeasures: MeasureWrapper[] = []
+): Promise<CancelRoundtripResult[]> {
+
   if (result.length === numberOfCanceledTrips) {
     return result;
   }
@@ -234,8 +241,8 @@ export async function getBestAssignment(trips: any, numberOfCanceledTrips: numbe
   let bestBeforeAfter!: CancelRoundtripResult;
   let bestIndex: number;
   let currentMeasures: MeasureWrapper[] = [];
-  for (let i = 0; i < trips.length; i++) {
-    const roundTrip = trips[i];
+  for (let i = 0; i < roundtrips.length; i++) {
+    const roundTrip = roundtrips[i];
     const { cancelStart, cancelReturn } = await getCancelMeasures(roundTrip, systemTime);
 
     if (!cancelStart || !cancelReturn) {
@@ -247,7 +254,7 @@ export async function getBestAssignment(trips: any, numberOfCanceledTrips: numbe
 
     const beforeAfter = await applyMeasures(currentMeasures, costFunction);
     const overallCost = beforeAfter.overallCost;
-    const noImprovementFound = i === trips.length - 1 && !bestOverallCost;
+    const noImprovementFound = i === roundtrips.length - 1 && !bestOverallCost;
 
     if ((overallCost && !isNaN(overallCost) && overallCost < bestOverallCost) || noImprovementFound) {
       bestOverallCost = overallCost;
@@ -261,10 +268,10 @@ export async function getBestAssignment(trips: any, numberOfCanceledTrips: numbe
 
   result.push(bestBeforeAfter);
 
-  return await getBestAssignment(trips.filter((_trip: any, index: number) => index !== bestIndex), numberOfCanceledTrips, costFunction, systemTime, result, currentMeasures);
+  return await getBestAssignment(roundtrips.filter((_trip: any, index: number) => index !== bestIndex), numberOfCanceledTrips, costFunction, systemTime, result, currentMeasures);
 }
 
-onmessage = async (e: { data: { roundTrips: Roundtrip, cancelRoundTrips: number, costFunctionName: keyof CostFunctions, apiEndpoint: string, systemTime: number } }) => {
+onmessage = async (e: { data: { roundTrips: Roundtrip[], cancelRoundTrips: number, costFunctionName: keyof CostFunctions, apiEndpoint: string, systemTime: number } }) => {
   const { roundTrips, cancelRoundTrips, costFunctionName, apiEndpoint, systemTime } = e.data;
   const costFunction = CostFunctions[costFunctionName];
   setApiEndpoint(apiEndpoint);

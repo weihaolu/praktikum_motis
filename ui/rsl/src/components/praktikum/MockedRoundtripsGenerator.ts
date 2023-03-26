@@ -1,9 +1,11 @@
+import { Connection } from "@/api/protocol/motis";
 import { sendRequest } from "@/api/request";
+import { Roundtrip } from "./types";
 
 export async function getMockedRoundtrips(
   start_station_id: string,
   time: number,
-): Promise<any> {
+): Promise<Roundtrip[]> {
 
   const startStationContent = {
     station_id: start_station_id,
@@ -15,7 +17,7 @@ export async function getMockedRoundtrips(
 
   const startStationResult = await sendRequest("/railviz/get_station", "RailVizStationRequest", startStationContent);
   const startStationEvents = (startStationResult.content as any).events;
-  const result :{ startConnection: any, returnConnection: any }[] = [];
+  const result: Roundtrip[] = [];
 
   for (const startStationEvent of startStationEvents) {
     if (startStationEvent.type === "DEP") {
@@ -28,7 +30,7 @@ export async function getMockedRoundtrips(
       const firstStopOfStartStationConnection = stopsOfStartStationConnection[0];
       //the first station of this trip must be the start station
       if (firstStopOfStartStationConnection.station.id === start_station_id) {
-        const startConnection = connectionResultOfStartStationEvent.content;
+        const startConnection = connectionResultOfStartStationEvent.content as Connection;
         const lastStopOfStartStationConnection = stopsOfStartStationConnection[stopsOfStartStationConnection.length - 1];
         const returnStationId = lastStopOfStartStationConnection.station.id;
         const returnStationContent = {
@@ -50,7 +52,7 @@ export async function getMockedRoundtrips(
             const lastStopOfEndStationConnection = stopsOfEndStationConnection[stopsOfEndStationConnection.length - 1];
             //the first station of this trip must be the return station
             if (firstStopOfEndStationConnection.station.id === returnStationId && lastStopOfEndStationConnection.station.id === start_station_id) {
-              returnConnection = connectionResultOfEndStationEvent.content;
+              returnConnection = connectionResultOfEndStationEvent.content as Connection;
               break;
             }
           }
