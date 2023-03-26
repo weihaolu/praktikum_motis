@@ -429,7 +429,8 @@ export type MsgContentType =
   | "PaxMonGroupStatisticsResponse"
   | "PaxMonDebugGraphRequest"
   | "PaxMonDebugGraphResponse"
-  | "PaxMonGetUniversesResponse";
+  | "PaxMonGetUniversesResponse"
+  | "RailVizStationRequest";
 
 // Message.fbs
 export type DestinationType = "Module" | "Topic";

@@ -86,7 +86,7 @@ function CancelRoundtripDetails(): JSX.Element {
             <span className="font-medium text-2xl">Beste Belegungen:</span>
             {
                 candidates && candidates.map((candidate, index) =>
-                    <div onClick={openPopupFactory(index)} >
+                    <div key={index} onClick={openPopupFactory(index)} >
                         <CandidateTile key={index} {...candidate}></CandidateTile>
                     </div>
                 )

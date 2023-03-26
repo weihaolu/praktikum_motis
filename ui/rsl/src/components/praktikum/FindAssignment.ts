@@ -1,13 +1,11 @@
 import { sendPaxForecastApplyMeasuresRequest } from "@/api/paxforecast";
 import { sendLookupRiBasisRequest } from "@/api/lookup";
-import { MeasureUnion, toMeasureWrapper } from "@/data/measures";
+import { toMeasureWrapper } from "@/data/measures";
 import { sendPaxMonForkUniverseRequest, sendPaxMonGroupStatisticsRequest, sendPaxMonDestroyUniverseRequest } from "@/api/paxmon";
 import { PaxMonEdgeLoadInfo, PaxMonGroupStatisticsResponse, PaxMonHistogram, PaxMonStatusResponse, PaxMonTripInfo, PaxMonUpdatedTrip } from "@/api/protocol/motis/paxmon";
-import { sendRequest } from "@/api/request";
 import { BeforeAfterCancel, BeforeAfterDist, CancelRoundtripResult, DelayDiff, NumberObject, OverallDelayDiff, Roundtrip, ThresholdDataObject } from "./types";
 import { MeasureWrapper } from "@/api/protocol/motis/paxforecast";
 import { setApiEndpoint } from "@/api/endpoint";
-import { RouteData } from "@remix-run/router/dist/utils";
 
 async function getCancelMeasures(roundTrip: Roundtrip, systemTime?: number) {
   const startConnection = roundTrip.startConnection;
@@ -265,86 +263,6 @@ export async function getBestAssignment(trips: any, numberOfCanceledTrips: numbe
 
   return await getBestAssignment(trips.filter((_trip: any, index: number) => index !== bestIndex), numberOfCanceledTrips, costFunction, systemTime, result, currentMeasures);
 }
-
-// export async function getMockedRoundtrips(
-//   start_station_id: string,
-//   time: number,
-//   result: { startConnection: any, returnConnection: any }[],
-// ): Promise<any> {
-
-//   const startStationContent = {
-//     station_id: start_station_id,
-//     time,
-//     "event_count": 100,
-//     "direction": "LATER",
-//     "by_schedule_time": true
-//   };
-
-//   const startStationResult = await sendRequest("/railviz/get_station", "RailVizStationRequest", startStationContent);
-//   const startStationEvents = (startStationResult.content as any).events;
-//   for (const startStationEvent of startStationEvents) {
-//     if (startStationEvent.type === "DEP") {
-//       const connectionContentOfStartStationEvent = startStationEvent.trips[0].id
-//       if (!Number.isInteger(Number.parseInt(connectionContentOfStartStationEvent.line_id, 10))) {
-//         continue;
-//       }
-//       const connectionResultOfStartStationEvent = await sendRequest("/trip_to_connection", "TripId", connectionContentOfStartStationEvent);
-//       const stopsOfStartStationConnection = (connectionResultOfStartStationEvent.content as any).stops;
-//       const firstStopOfStartStationConnection = stopsOfStartStationConnection[0];
-//       //the first station of this trip must be the start station
-//       if (firstStopOfStartStationConnection.station.id === start_station_id) {
-//         const startConnection = connectionResultOfStartStationEvent.content;
-//         const lastStopOfStartStationConnection = stopsOfStartStationConnection[stopsOfStartStationConnection.length - 1];
-//         const returnStationId = lastStopOfStartStationConnection.station.id;
-//         const returnStationContent = {
-//           station_id: returnStationId,
-//           time,
-//           "event_count": 100,
-//           "direction": "LATER",
-//           "by_schedule_time": true
-//         };
-//         let returnConnection;
-//         const endStationResult = await sendRequest("/railviz/get_station", "RailVizStationRequest", returnStationContent);
-//         const endStationEvents = (endStationResult.content as any).events;
-//         for (const endStationEvent of endStationEvents) {
-//           if (endStationEvent.type === "DEP") {
-//             const connectionContentOfEndStationEvent = endStationEvent.trips[0].id
-//             const connectionResultOfEndStationEvent = await sendRequest("/trip_to_connection", "TripId", connectionContentOfEndStationEvent);
-//             const stopsOfEndStationConnection = (connectionResultOfEndStationEvent.content as any).stops;
-//             const firstStopOfEndStationConnection = stopsOfEndStationConnection[0];
-//             const lastStopOfEndStationConnection = stopsOfEndStationConnection[stopsOfEndStationConnection.length - 1];
-//             //the first station of this trip must be the return station
-//             if (firstStopOfEndStationConnection.station.id === returnStationId && lastStopOfEndStationConnection.station.id === start_station_id) {
-//               returnConnection = connectionResultOfEndStationEvent.content;
-//               break;
-//             }
-//           }
-//         }
-//         if (returnConnection) {
-//           result.push({ startConnection, returnConnection });
-//         }
-//       }
-//     }
-//   }
-//   console.log(result);
-// }
-// getMockedRoundtrips("8000261", Math.round(time.getTime() / 1000), result).then(async () => {
-//   console.log(result);
-//   const testRoundtrips = result.slice(0, 5);
-
-
-
-//   const bestHeuristic1Assignment = await getBestAssignment(testRoundtrips, 2, costFunction1);
-//   console.log("best heuristic 1 assignment", bestHeuristic1Assignment);
-//   const bestHeuristic2Assignment = await getBestAssignment(testRoundtrips, 2, costFunction2);
-//   console.log("best heuristic 2 assignment", bestHeuristic2Assignment);
-//   const bestHeuristic3Assignment = await getBestAssignment(testRoundtrips, 2, costFunction3);
-//   console.log("best heuristic 3 assignment", bestHeuristic3Assignment);
-
-//   const bestHeuristic1Assignment2 = await getBestAssignment(testRoundtrips.filter((roundTrip: any) => roundTrip !== bestHeuristic1Assignment[0].canceledRoundtrip), 2, costFunction1);
-//   console.log("best heuristic 1.2 assignment", bestHeuristic1Assignment2);
-
-// });*/
 
 onmessage = async (e: { data: { roundTrips: Roundtrip, cancelRoundTrips: number, costFunctionName: keyof CostFunctions, apiEndpoint: string, systemTime: number } }) => {
   const { roundTrips, cancelRoundTrips, costFunctionName, apiEndpoint, systemTime } = e.data;
