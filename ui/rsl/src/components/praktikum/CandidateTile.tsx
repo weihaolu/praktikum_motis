@@ -15,7 +15,7 @@ const CandidateTile: React.FC<CandidateTileProps> = ({ costFunctionName, cancelR
         <div className="candiate-tile">
             <h1><b>{CostFunctionLabels[costFunctionName]}</b></h1>
             <h2>Insgesamte Auslastungserhöhung: {Math.trunc(overallCapacityCost * 100)}%</h2>
-            <h2>Insgesamte Verspätung in Minuten {overallDelayAfter}</h2>
+            <h2>Insgesamte Verspätung: {overallDelayAfter} Minuten</h2>
             <div className="small-labels">
                 {cancelResult.map((roundTrip, index) => {
                     const { startConnection, returnConnection } = roundTrip.canceledRoundtrip;
